@@ -1,0 +1,234 @@
+// out: ./styl.css, compress: true, sourceMap: true
+@import "normalize", "font", "color", "mixin", "default";
+
+/* basic */
+$min-width: 320px;
+$img-url: "../images";
+$screen-size-pc: 1030px;
+$screen-size-mobile: max($screen-size-pc);
+
+// * {
+//   @include ani(0.3s);
+// }
+
+html {
+  min-width: $min-width;
+  max-width: 100%;
+  font-size: 14px;
+  height: -webkit-fill-available;
+}
+
+html,
+body {
+  font-family: $myfont, "Malgun Gothic", "apple sd gothic neo", sans-serif;
+
+
+  &.lock {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-size:0;
+
+
+
+
+
+
+
+
+  /* header */
+  header {
+    position:relative;
+    z-index:998;
+    height:58px;
+    background:#fff;
+    padding:0 20px;
+
+    h1 {
+        display:inline-block;
+        margin:15px 0 0;
+
+    
+        a {
+          display:block;
+          position:relative;
+          font-size:18px;
+          font-weight:900;
+          color:#111;
+          padding:0 0 0 80px;
+
+
+          &::before {
+            content:"";
+            display:block;
+            position:absolute;
+            left:0;
+            top:-10px;
+            width:70px;
+            height:42px;
+            background:url(../images/logo.png) no-repeat left center / 100% auto;
+          }
+
+          span {
+            color:#5051AB;
+          }
+        }
+    }
+
+    div.filter-date {
+      position:absolute;
+      right:20px;
+      top:9px;
+      font-size:0;
+
+      input {
+          width:190px;
+          height:38px;
+          padding:0 40px 0 20px;
+          border-radius:38px 0 0 38px;
+          border:none;
+          font-size:16px;
+          font-weight:600;
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' style='fill: rgba(0, 0, 0, 1);transform: ;msFilter:;'%3E%3Cpath d='M3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7v2H5a2 2 0 0 0-2 2zm16 14H5V8h14z'%3E%3C/path%3E%3C/svg%3E") no-repeat #EFEFEF  right 10px center / 18px auto;
+      }
+
+      button {
+        border:none;
+        background:#222;
+        color:#fff;
+        font-size:14px;
+        font-weight:600;
+        height:38px;
+        padding:0 20px 0 14px;
+        border-radius:0 38px 38px 0;
+      }
+
+    }
+
+  }
+
+  aside {
+    display:inline-block;
+    vertical-align:top;
+    width:180px;
+    height:calc(100vh - 58px);
+    background:#5051AB;
+
+    nav {
+      a {
+        display:block;
+        position:relative;
+        font-size:14px;
+        font-weight:500;
+        color:#fff;
+        line-height:70px;
+        border-bottom:1px solid rgba(0,0,0,.3);
+        padding:0 10px 0 40px;
+        overflow:hidden;
+
+        &:after {
+          content:"";
+          display:block;
+          position:absolute;
+          left:0; 
+          right:0;
+          bottom:0;
+          height:1px;
+          background:rgba(255,255,255,.3);
+        }
+
+        &::before {
+          content:"";
+          display:block;
+          position:absolute;
+          right:-50px;
+          bottom:0;
+          width:50px;
+          height:140px;
+          background:rgba(0,0,0,.3);
+          transform-origin:left bottom;
+          @include ani(.2s);
+        }
+
+        i {
+          position:absolute;
+          left:10px;
+          top:50%;
+          transform:translateY(-50%);
+          font-size:24px;
+          
+        }
+
+        &:hover,
+        &.active {
+          background:#3B3C8C;
+
+          &::before {
+            transform: rotate(-18deg);
+          }
+        }
+
+        &.active {
+          color:#FFE73D;
+
+          i {
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+  
+
+
+  div#content {
+    display:inline-block;
+    vertical-align:top;
+    background:#E9E9E9;
+    width:calc(100% - 180px);
+    height:calc(100vh - 58px);
+    padding:30px;
+    font-size:14px;
+
+  }
+
+
+/* DatePicker CSS */
+  .ui-datepicker {
+    border:1px solid #ccc;
+    background:#fff;
+    padding:20px;
+    width:190px;
+
+    .ui-datepicker-header {
+
+      select {
+        height:38px;
+        padding:0 10px;
+        border:none;
+        font-size:16px;
+        font-weight:800;
+        margin-bottom:10px;
+        outline:none;
+      }
+    }
+
+    table {
+      width:100%;
+
+      td {
+        font-size:15px;
+
+        &:hover {
+          background:#eee;
+        }
+      }
+    }
+  }
+
+}
