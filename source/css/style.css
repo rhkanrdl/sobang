@@ -2025,6 +2025,7 @@ body div#content {
   height: calc(100vh - 58px);
   padding: 30px;
   font-size: 14px;
+  overflow-y: scroll;
 }
 body .ui-datepicker {
   border: 1px solid #ccc;
