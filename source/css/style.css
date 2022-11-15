@@ -747,7 +747,7 @@ button {
 .modal .modal-content h2 button {
   position: absolute;
   right: 20px;
-  bottom: 10;
+  bottom: 10px;
   border: none;
   background: transparent;
   width: 22px;
